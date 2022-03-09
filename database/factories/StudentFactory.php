@@ -29,7 +29,7 @@ class StudentFactory extends Factory
             'Celular'=>$this->faker->phoneNumber,
             'Direccion'=>$this->faker->address(),
             'Roles'=>$this->faker->randomElement(['Nuevo', 'Repitente']),
-            'Curso'=>$this->faker->randomElement(['Mates1', 'Progra3'])
+            'Curso'=>$this->faker->randomElement(['Mates1', 'Progra3', 'Contabilidad', 'Estadistica', 'Arquitectura de sistemas', 'Compiladores', 'Arquitectura de Redes', 'Inteligencia Artificial'])
         ];
     }
 }
