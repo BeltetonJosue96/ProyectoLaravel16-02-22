@@ -15,6 +15,7 @@
 
 
         <a href="{{url('Alumnos/createAlumnos')}}" class="btn btn-success"> Registrar otro Estudiante</a>
+        <a href="{{url('Cursos/create')}}" class="btn btn-warning"> Registrar otro Curso</a>
         <br>
         <br>
         <table class="table table table-striped table-hover">
@@ -28,7 +29,8 @@
                 <th scope="col">Correo</th>
                 <th scope="col">Celular</th>
                 <th scope="col">Direccion</th>
-                <th scope="col">ROL</th>
+                <th scope="col">Rol</th>
+                <th scope="col">Curso</th>
                 <th scope="col">Modificar</th>
 
             </tr>
@@ -47,6 +49,7 @@
                     <td>{{$alumno->Celular}}</td>
                     <td>{{$alumno->Direccion}}</td>
                     <td>{{$alumno->Roles}}</td>
+                    <td>{{$alumno->Curso}}</td>
 
 
                     <!-- Mandamos a traer la info de edit y llenamos los campos-->

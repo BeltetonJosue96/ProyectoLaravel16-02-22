@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\CursosController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,6 +18,7 @@ Route::get('/', function () {
     return view('auth.login');
 });
 
+Route::resource('Cursos',CursosController::class);
 
 #Ruta hacía el INDEX HOME
 Route::get('/Alumnos','\App\Http\Controllers\AlumnosController@index');
@@ -27,8 +29,12 @@ Route::get('/Alumnos/edit','\App\Http\Controllers\AlumnosController@edit');
 #Ruta hacia el formulario de alumnos
 Route::get('/Alumnos/createAlumnos','\App\Http\Controllers\AlumnosController@create');
 
+Route::get('/crearCurso','App\Http\Controllers\CursosController@create');
+
+
 #General
 Route::resource('Alumnos', '\App\Http\Controllers\AlumnosController');
+/*Route::resource('Cursos', '\App\Http\Controllers\CursosController');*/
 
 
 #Creamos este seguriad para que no puedan ingresar al fomrulario sin inciicar sesion primero

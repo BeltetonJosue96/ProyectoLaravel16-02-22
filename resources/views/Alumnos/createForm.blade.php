@@ -49,17 +49,29 @@
     <br>
 </div>
 
-<label for="Roles">{{'Roles'}}</label>
-<select class="form-control" name="Roles" value="{{isset($alumnos->Roles)?$alumnos->Roles:''}}" id="Roles">
-    <option>Estudiante</option>
-    <option>Repitente</option>
-    <option>Catedratico</option>
-    <option>Coordinador</option>
-    <option>Direcctivo</option>
-</select>
+<div class="container">
+    <div class="row">
+        <div class="col">
+        <label for="Roles">{{'Roles'}}</label>
+        <select class="form-control" name="Roles" value="{{isset($alumnos->Roles)?$alumnos->Roles:''}}" id="Roles">
+            <option>Nuevo</option>
+            <option>Repitente</option>
+        </select>
+        </div>
 
+
+        <div class="col">
+        <label for="Curso">{{'Cursos'}}</label>
+        <select class="form-control" name="Curso" value="{{isset($alumnos->Curso)?$alumnos->Curso:''}}" id="Curso">
+            @foreach($cursos as $curso)
+                <option>{{$curso->Curso}}</option>
+            @endforeach
+        </select>
+        </div>
+    </div>
+</div>
     <!-- Boton que nos servira para enviar la informacion -->
-    <input type="submit" class="btn btn-success" value="{{$modo}} alumno"><!--$modo nos sirve para modifcar el boton del form a Editar-->
+    <input type="submit" class="btn btn-success mt-5" value="{{$modo}} alumno"><!--$modo nos sirve para modifcar el boton del form a Editar-->
 
-    <a href="{{url('Alumnos')}}"class="btn btn-primary"> Regresar</a>
+    <a href="{{url('Alumnos')}}"class="btn btn-primary mt-5"> Regresar</a>
 

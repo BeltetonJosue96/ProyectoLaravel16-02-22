@@ -28,7 +28,8 @@ class StudentFactory extends Factory
             'CorreoElectronico'=>$this->faker->freeEmail(),
             'Celular'=>$this->faker->phoneNumber,
             'Direccion'=>$this->faker->address(),
-            'Roles'=>$this->faker->randomElement(['Estudiante', 'Repitente', 'Catedratico', 'Coordinador', 'Direcctivo'])
+            'Roles'=>$this->faker->randomElement(['Nuevo', 'Repitente']),
+            'Curso'=>$this->faker->randomElement(['Mates1', 'Progra3'])
         ];
     }
 }

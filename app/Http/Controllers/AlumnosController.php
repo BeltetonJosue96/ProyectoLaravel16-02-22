@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Alumnos;
+use App\Models\Cursos;
 use Illuminate\Http\Request;
 
 /*SE AGREGO ESTA LIBRERIA*/
@@ -37,7 +38,8 @@ class AlumnosController extends Controller
 
     public function create()
     {
-        return view('Alumnos.createAlumnos');
+        $listaCursos['cursos']=Cursos::paginate(10);
+        return view('Alumnos.createAlumnos',$listaCursos);
     }
 
     /**
