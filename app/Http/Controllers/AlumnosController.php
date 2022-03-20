@@ -123,10 +123,13 @@ class AlumnosController extends Controller
 
     public function edit($id)
     {/*Lo que hacemos es rellenar el formulario con los datos*/
-
-        $alumnos=Alumnos::findOrFail($id);
-
-       return view('Alumnos.edit',compact('alumnos'));
+        try {
+            $alumnos=Alumnos::findOrFail($id);
+            return view('Alumnos.edit',compact('alumnos'));
+        } catch (\Throwable $e){
+            report($e);
+            return abort(403, 'Acción no autorizada.');
+        }
 
 
     }
